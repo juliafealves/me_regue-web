@@ -26,3 +26,12 @@ footer{
 .break-col {
   margin-top: 15px;
 }
+
+.card-text{
+  color: #777;
+  font-style: italic;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
