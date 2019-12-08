@@ -1,0 +1,16 @@
+<div class="bs-docs-section">
+  <div class="page-header">
+    <div class="row">
+      <div class="col">
+        <h1>Plantas</h1>
+      </div>
+    </div>
+  </div>
+  <a class="btn btn-primary mb-3" routerLink="/plants/add">Adicionar Planta</a>
+  <div class="row">
+    <div class="col-md-4 col-sm-12" *ngFor="let plant of plants; let index = index">
+      <app-plant-card [plant]="plant" (update)="update($event)" (destroy)="destroy($event)"></app-plant-card>
+      <div class="w-100 break-col" *ngIf="index % 3 == 0"></div>
+    </div>
+  </div>
+</div>
