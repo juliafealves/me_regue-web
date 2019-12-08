@@ -1,12 +1,9 @@
-import Model from './model';
-
-class PlantModel extends Model{
-  name: string;
-  description: string;
+class Model {
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
 
   constructor(object?: Partial<any>) {
-    super(object);
-
     if (object) {
       this.restObjectToModel(object);
     }
@@ -17,17 +14,17 @@ class PlantModel extends Model{
       this.id = object.id;
     }
 
-    this.name = object.name;
-    this.description = object.description;
+    this.createdAt = object.created_at;
+    this.updatedAt = object.updated_at;
   }
 
   public modelToRestObject(): any {
     return {
       id: this.id,
-      name: this.name,
-      description: this.description
+      created_at: this.createdAt,
+      updated_at: this.updatedAt
     };
   }
 }
 
-export default PlantModel;
+export default Model;

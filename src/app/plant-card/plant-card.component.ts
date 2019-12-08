@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import PlantModel from '../models/plant.model';
 
 @Component({
   selector: 'app-plant-card',
@@ -7,13 +8,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PlantCardComponent implements OnInit {
   @Input()
-  plant: string;
+  plant: PlantModel;
 
-  @Input()
-  description: string;
+  @Output()
+  update = new EventEmitter();
+
+  @Output()
+  destroy = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  public onUpdate(): void {
+    this.update.emit(this.plant);
+  }
+
+  public onDestroy(): void {
+    this.destroy.emit(this.plant);
   }
 }

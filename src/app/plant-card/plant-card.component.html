@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">{{plant}}</h4>
-    <p class="card-text">{{description}}</p>
+    <h4 class="card-title">{{plant.name}}</h4>
+    <p class="card-text">{{plant.description}}</p>
     <div class="row">
       <div class="col">
-        <a href="#" class="btn btn-warning btn-block">Editar</a>
+        <button class="btn btn-warning btn-block" (click)="onUpdate()">Editar</button>
       </div>
       <div class="col">
-        <a href="#" class="btn btn-danger btn-block">Excluir</a>
+        <a href="#" class="btn btn-danger btn-block" (click)="onDestroy()">Excluir</a>
       </div>
     </div>
   </div>
